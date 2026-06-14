@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2 class="mb-3">Създай нова EC2 инстанция</h2>
+
+{% if error %}
+<div class="alert alert-danger">{{ error }}</div>
+{% endif %}
+
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">Име на инстанцията</label>
+        <input type="text" name="name" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Тип инстанция</label>
+        <select name="instance_type" class="form-control">
+            <option value="t2.micro">t2.micro</option>
+            <option value="t2.small">t2.small</option>
+            <option value="t2.medium">t2.medium</option>
+        </select>
+    </div>
+
+    <button class="btn btn-primary">Създай</button>
+</form>
+
+{% endblock %}

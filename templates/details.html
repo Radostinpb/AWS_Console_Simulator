@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2 class="mb-3">Детайли за инстанция #{{ instance.id }}</h2>
+
+<ul class="list-group">
+    <li class="list-group-item"><strong>Име:</strong> {{ instance.name }}</li>
+    <li class="list-group-item"><strong>Тип:</strong> {{ instance.instance_type }}</li>
+    <li class="list-group-item"><strong>Състояние:</strong> {{ instance.state }}</li>
+    <li class="list-group-item"><strong>Създадена на:</strong> {{ instance.created_at }}</li>
+</ul>
+
+<a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Назад</a>
+
+{% endblock %}
